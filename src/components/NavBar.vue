@@ -19,7 +19,6 @@
 
       <template v-slot:item="{ item }">
         <v-tabs-window-item :value="item.value" class="pa-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima, at placeat totam, magni doloremque veniam neque porro libero rerum unde voluptatem!
         </v-tabs-window-item>
       </template>
     </v-tabs>
@@ -31,25 +30,16 @@
       tab: 'tab-1',
       tabs: [
         {
-          icon: 'mdi-book-open-page-variant',
-          text: 'Readme',
+          icon: 'mdi-align-vertical-bottom',
+          text: 'Gráfico interativo',
           value: 'tab-1',
         },
         {
-          icon: 'mdi-handshake-outline',
-          text: 'Code of Conduct',
+          icon: 'mdi-human-capacity-increase',
+          text: 'Nomes do Brasil',
           value: 'tab-2',
         },
-        {
-          icon: 'mdi-license',
-          text: 'MIT License',
-          value: 'tab-3',
-        },
-        {
-          icon: 'mdi-shield-lock-outline',
-          text: 'Security',
-          value: 'tab-4',
-        },
+      
       ],
     }),
   }
