@@ -1,11 +1,9 @@
 <template>
   <v-app>
-    <v-main>
-      <router-view />
-    </v-main>
+    <router-view />
   </v-app>
 </template>
 
 <script setup>
-  //
+// Sem scripts adicionais aqui por enquanto
 </script>
