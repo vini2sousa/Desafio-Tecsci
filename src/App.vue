@@ -1,9 +1,21 @@
 <template>
-  <v-app>
+  <div :class="{ 'dark-mode': themeStore.darkMode }">
     <router-view />
-  </v-app>
+  </div>
 </template>
 
 <script setup>
-// Sem scripts adicionais aqui por enquanto
+import { useThemeStore } from '@/stores/themeStore';
+
+// Obtenha o store do Pinia
+const themeStore = useThemeStore();
 </script>
+
+<style>
+.dark-mode {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+/* Outros estilos para o modo escuro */
+</style>

@@ -1,9 +1,10 @@
 <template>
+   
   <v-card>
+    <ThemeToggle />
     <v-tabs
       v-model="tab"
       align-tabs="center"
-      
       slider-color="transparent"
     >
       <router-link :to="{ path: '/grafico-interativo' }">
@@ -12,8 +13,8 @@
       <router-link :to="{ path: '/nomes-do-brasil' }">
         <v-tab :value="2">Nomes do Brasil</v-tab>
       </router-link>
-      <router-link :to="{ path: '/terceira-rota' }">
-        <v-tab :value="3">Terceira Rota</v-tab>
+      <router-link :to="{ path: '/noticias-ibge' }">
+        <v-tab :value="3">Noticias IBGE</v-tab>
       </router-link>
     </v-tabs>
     <v-container fluid>
@@ -24,7 +25,6 @@
           cols="12"
           md="4"
         >
-       
         </v-col>
       </v-row>
     </v-container>

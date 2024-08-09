@@ -1,6 +1,7 @@
 <template>
    <Home />
    <chartComponent />
+  
   </template>
   
   <script>

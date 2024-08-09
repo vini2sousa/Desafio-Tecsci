@@ -144,13 +144,13 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding-top: 10px; /* Espaçamento superior para o botão */
+  padding-top: 10px; 
 }
 
-/* Estilo para o botão que gera o gráfico */
+
 .generate-chart-button {
-  position: relative; /* Torna a posição do botão relativa */
-  margin-bottom: 10px; /* Espaçamento para o botão quando na parte superior */
+  position: relative; 
+  margin-bottom: 10px; 
   padding: 10px 20px;
   border: none;
   background-color: #007bff;
@@ -159,22 +159,22 @@ export default defineComponent({
   border-radius: 5px;
   font-size: 16px;
   z-index: 10;
-  transition: transform 0.3s ease; /* Transição suave */
+  transition: transform 0.3s ease; 
 }
 
-/* Muda a posição do botão quando o gráfico é exibido */
+
 .button-below {
   position: absolute;
-  top: 510px; /* Posição fixa abaixo do gráfico */
-  margin-top: 10px; /* Espaçamento superior */
+  top: 510px; 
+  margin-top: 10px; 
 }
 
-/* Estilo do botão ao passar o mouse */
+
 .generate-chart-button:hover {
   background-color: #0056b3;
 }
 
-/* Estilos para o container do gráfico */
+
 .chart-container {
   display: flex;
   flex-direction: column;
@@ -182,37 +182,37 @@ export default defineComponent({
   width: 100%;
   height: 400px;
   padding: 0;
-  background-color: #2c2c2c; /* Cor de fundo cinza escuro */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: none; /* Remover sombra */
+  background-color: #2c2c2c; 
+  border-radius: 10px; 
+  box-shadow: none;
   overflow: hidden;
 }
 
-/* Estilo para a animação de transição */
+
 .slide-fade-enter-active, .slide-fade-leave-active {
   transition: opacity 0.5s, transform 0.5s;
 }
-.slide-fade-enter, .slide-fade-leave-to /* .slide-fade-leave-active in <2.0.8 */ {
+.slide-fade-enter, .slide-fade-leave-to  {
   opacity: 0;
   transform: translateY(20px);
 }
 
-/* Estilos para o container do seletor de data */
+
 .date-picker-container {
   margin-bottom: 20px;
   display: flex;
   gap: 10px;
 }
 
-/* Estilos para os inputs de data */
+
 .date-picker-input {
-  border: 1px solid #cccccc; /* Borda cinza clara */
+  border: 1px solid #cccccc; 
   padding: 8px;
   border-radius: 4px;
   background-color: #ffffff;
 }
 
-/* Estilos para os botões */
+
 .date-picker-button {
   padding: 8px 16px;
   border: none;
@@ -227,7 +227,6 @@ export default defineComponent({
   background-color: #0056b3;
 }
 
-/* Estilo para o contêiner do gráfico */
 .chart-content {
   width: 100%;
   height: 100%;

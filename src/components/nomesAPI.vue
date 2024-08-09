@@ -1,22 +1,22 @@
 <template>
     <v-container>
-      <!-- Texto informativo -->
+
       <v-row>
         <v-col>
           <h2>Ranking dos Nomes Mais Frequentes do Brasil</h2>
         </v-col>
       </v-row>
   
-      <!-- Botão para gerar a lista -->
+
       <v-row>
         <v-col>
           <v-btn color="primary" @click="toggleTable">{{ showTable ? 'Recolher Lista' : 'Gerar Lista' }}</v-btn>
         </v-col>
       </v-row>
   
-      <!-- Transição para a tabela -->
+   
       <transition name="fade" mode="out-in">
-        <!-- Tabela para exibir os dados da API -->
+     
         <v-row v-if="showTable">
           <v-col>
             <v-table :items="rankedNames" :headers="headers" theme="dark">
@@ -48,33 +48,33 @@
     name: 'nomesAPI',
     data() {
       return {
-        rankedNames: [], // Dados da API
+        rankedNames: [], 
         headers: [
           { text: 'Nome', value: 'nome' },
           { text: 'Frequência', value: 'frequencia' },
           { text: 'Ranking', value: 'rank' },
         ],
-        showTable: false, // Controla a visibilidade da tabela
+        showTable: false, 
       };
     },
     methods: {
-      // Função para alternar a visibilidade da tabela
+ 
       toggleTable() {
         if (!this.showTable) {
-          // Se a tabela não estiver visível, busca os dados
+       
           this.fetchData();
         }
-        // Alterna a visibilidade da tabela
+       
         this.showTable = !this.showTable;
       },
-      // Função para buscar dados da API do IBGE
+     
       async fetchData() {
         try {
           const response = await axios.get(
             'https://servicodados.ibge.gov.br/api/v2/censos/nomes/ranking'
           );
   
-          // Formata os dados recebidos para a tabela
+          
           this.rankedNames = response.data[0].res.map((item, index) => ({
             nome: item.nome,
             frequencia: item.frequencia,
@@ -111,23 +111,23 @@
   h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #555; /* Cor do texto para o título */
+    color: #555; 
   }
   
-  /* Estilo para a transição da tabela */
+  
   .fade-enter-active,
   .fade-leave-active {
     transition: max-height 0.5s ease, opacity 0.5s ease;
     overflow: hidden;
   }
   
-  .fade-enter, .fade-leave-to /* .fade-leave-active no final da transição */ {
+  .fade-enter, .fade-leave-to  {
     max-height: 0;
     opacity: 0;
   }
   
-  .fade-enter-to, .fade-leave /* .fade-leave no início da transição */ {
-    max-height: 1000px; /* Altura máxima da tabela */
+  .fade-enter-to, .fade-leave  {
+    max-height: 1000px; 
     opacity: 1;
   }
   </style>
