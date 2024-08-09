@@ -1,8 +1,4 @@
 <template>
-  <Home />
-  </template>
-  
-  <script>
-  
-  </script>
-  
+ <Home />
+ <nomesAPI /> 
+</template>
