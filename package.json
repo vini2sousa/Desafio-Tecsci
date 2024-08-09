@@ -12,9 +12,13 @@
     "@vuepic/vue-datepicker": "^9.0.1",
     "axios": "^1.7.3",
     "chart.js": "^4.4.3",
+    "chartjs": "^0.3.24",
     "core-js": "^3.37.1",
+    "highcharts": "^11.4.6",
+    "highcharts-vue": "^2.0.1",
     "roboto-fontface": "*",
     "vue": "^3.4.31",
+    "vue3-datepicker": "^0.4.0",
     "vuetify": "^3.6.11"
   },
   "devDependencies": {

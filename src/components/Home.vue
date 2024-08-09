@@ -3,7 +3,8 @@
     <v-tabs
       v-model="tab"
       align-tabs="center"
-      color="deep-purple-accent-4"
+      
+      slider-color="transparent"
     >
       <router-link :to="{ path: '/grafico-interativo' }">
         <v-tab :value="1">Gráfico Interativo</v-tab>
