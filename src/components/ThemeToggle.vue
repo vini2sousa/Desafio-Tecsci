@@ -7,7 +7,6 @@
   <script setup>
   import { useThemeStore } from '@/stores/themeStore';
   
-  // Obtenha o store do Pinia
   const themeStore = useThemeStore();
   
   const toggleTheme = () => {

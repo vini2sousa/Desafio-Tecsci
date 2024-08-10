@@ -6,7 +6,7 @@ import NoticiasIBGE from '@/components/NoticiasIBGE.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '',
     name: 'Home',
     component: Home,
   },

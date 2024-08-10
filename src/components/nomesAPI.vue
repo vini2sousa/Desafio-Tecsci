@@ -1,20 +1,15 @@
 <template>
     <v-container>
-
       <v-row>
         <v-col>
           <h2>Ranking dos Nomes Mais Frequentes do Brasil</h2>
         </v-col>
       </v-row>
-  
-
       <v-row>
         <v-col>
           <v-btn color="primary" @click="toggleTable">{{ showTable ? 'Recolher Lista' : 'Gerar Lista' }}</v-btn>
         </v-col>
       </v-row>
-  
-   
       <transition name="fade" mode="out-in">
      
         <v-row v-if="showTable">
@@ -40,7 +35,6 @@
       </transition>
     </v-container>
   </template>
-  
   <script>
   import axios from 'axios';
   
@@ -58,7 +52,7 @@
       };
     },
     methods: {
- 
+
       toggleTable() {
         if (!this.showTable) {
        
@@ -85,7 +79,7 @@
             alert('Nenhum resultado encontrado.');
           }
         } catch (error) {
-          console.error('Erro ao buscar dados:', error);
+          console.error('Erro ao buscar dados:');
           alert('Erro ao buscar dados. Por favor, tente novamente.');
         }
       },
@@ -111,7 +105,7 @@
   h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #555; 
+    color: #ffffff; 
   }
   
   

@@ -7,7 +7,7 @@
 <script setup>
 import { useThemeStore } from '@/stores/themeStore';
 
-// Obtenha o store do Pinia
+
 const themeStore = useThemeStore();
 </script>
 
@@ -17,5 +17,5 @@ const themeStore = useThemeStore();
   color: #ffffff;
 }
 
-/* Outros estilos para o modo escuro */
+
 </style>

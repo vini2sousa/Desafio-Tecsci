@@ -162,18 +162,15 @@ export default defineComponent({
   transition: transform 0.3s ease; 
 }
 
-
 .button-below {
   position: absolute;
-  top: 510px; 
+  top: 540px; 
   margin-top: 10px; 
 }
-
 
 .generate-chart-button:hover {
   background-color: #0056b3;
 }
-
 
 .chart-container {
   display: flex;
@@ -188,7 +185,6 @@ export default defineComponent({
   overflow: hidden;
 }
 
-
 .slide-fade-enter-active, .slide-fade-leave-active {
   transition: opacity 0.5s, transform 0.5s;
 }
@@ -197,13 +193,11 @@ export default defineComponent({
   transform: translateY(20px);
 }
 
-
 .date-picker-container {
   margin-bottom: 20px;
   display: flex;
   gap: 10px;
 }
-
 
 .date-picker-input {
   border: 1px solid #cccccc; 
@@ -211,7 +205,6 @@ export default defineComponent({
   border-radius: 4px;
   background-color: #ffffff;
 }
-
 
 .date-picker-button {
   padding: 8px 16px;

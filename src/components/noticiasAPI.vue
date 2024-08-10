@@ -1,6 +1,5 @@
 <template>
     <v-container>
-      <!-- Título e Descrição -->
       <v-row>
         <v-col>
           <h2>Filtrar Notícias do IBGE por Data</h2>
@@ -8,11 +7,9 @@
         </v-col>
       </v-row>
   
-      <!-- Seletor de Datas -->
       <v-row>
         <v-col cols="12" md="6">
           <div class="date-picker-container">
-            <!-- Input de Data de Início -->
             <vue-date-picker
               v-model="startDate"
               format="yyyy-MM-dd"
@@ -20,7 +17,6 @@
               class="date-picker-input"
               :popper-options="{ placement: 'bottom-start' }"
             />
-            <!-- Input de Data de Fim -->
             <vue-date-picker
               v-model="endDate"
               format="yyyy-MM-dd"
@@ -32,8 +28,6 @@
           </div>
         </v-col>
       </v-row>
-  
-      <!-- Transição para Tabela de Notícias -->
       <transition name="fade" mode="out-in">
         <v-row v-if="showTable" key="table">
           <v-col>
@@ -45,19 +39,15 @@
               class="elevation-1"
               item-key="id"
             >
-              <!-- Renderizando os dados da tabela -->
               <template v-slot:item="{ item }">
                 <tr>
                   <td>{{ item.titulo }}</td>
-                  <td>{{ formatDate(item.data_publicacao) }}</td>
+                  <td>{{ dataFormatada(item.data_publicacao) }}</td>
                   <td>
-                    <!-- Verificar URL e redirecionar corretamente -->
                     <a :href="item.link" target="_blank" class="news-link" rel="noopener noreferrer">Leia mais</a>
                   </td>
                 </tr>
               </template>
-  
-              <!-- Definindo o rodapé da tabela para exibir a paginação -->
               <template v-slot:footer>
                 <v-pagination
                   v-model:page="currentPage"
@@ -86,7 +76,7 @@
     },
     data() {
       return {
-        noticias: [], // Armazena todas as notícias
+        noticias: [], 
         headers: [
           { text: 'Título da Notícia', value: 'titulo' },
           { text: 'Data de Publicação', value: 'data_publicacao' },
@@ -97,7 +87,7 @@
         showTable: false,
         itemsPerPage: 10,
         currentPage: 1,
-        totalNoticias: 0 // Total de notícias disponíveis
+        totalNoticias: 0 
       };
     },
     methods: {
@@ -107,17 +97,13 @@
           return;
         }
   
-        const formattedStartDate = this.formatDateForApi(this.startDate);
-        const formattedEndDate = this.formatDateForApi(this.endDate);
+        const formattedStartDate = this.dataFormatadaForApi(this.startDate);
+        const formattedEndDate = this.dataFormatadaForApi(this.endDate);
   
         try {
           const response = await axios.get(
             `http://servicodados.ibge.gov.br/api/v3/noticias/?de=${formattedStartDate}&ate=${formattedEndDate}`
           );
-  
-          // Verificar URLs recebidas da API
-          console.log('Notícias recebidas:', response.data.items);
-  
           this.noticias = response.data.items.map((noticia) => ({
             id: noticia.id,
             titulo: noticia.titulo,
@@ -132,16 +118,15 @@
             alert('Nenhuma notícia encontrada para o intervalo de datas selecionado.');
           }
         } catch (error) {
-          console.error('Erro ao buscar notícias:', error);
           alert('Erro ao buscar notícias. Por favor, tente novamente.');
         }
       },
-      formatDate(date) {
+      dataFormatada(date) {
         if (!date) return '';
         const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
         return new Date(date).toLocaleDateString('pt-BR', options);
       },
-      formatDateForApi(date) {
+      dataFormatadaForApi(date) {
         const d = new Date(date);
         return `${d.getFullYear()}-${(d.getMonth() + 1)
           .toString()
@@ -191,7 +176,7 @@
   .news-link {
     color: #007bff;
     text-decoration: none;
-    cursor: pointer; /* Adiciona cursor de ponteiro */
+    cursor: pointer;
   }
   
   .news-link:hover {
