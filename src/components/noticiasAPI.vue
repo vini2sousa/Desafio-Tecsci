@@ -102,7 +102,7 @@ export default defineComponent({
 
       try {
         const response = await axios.get(
-          `http://servicodados.ibge.gov.br/api/v3/noticias/?de=${formattedStartDate}&ate=${formattedEndDate}`
+          `https://servicodados.ibge.gov.br/api/v3/noticias/?de=${formattedStartDate}&ate=${formattedEndDate}`
         );
         this.noticias = response.data.items.map((noticia) => ({
           id: noticia.id,
